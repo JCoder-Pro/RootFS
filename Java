@@ -1,0 +1,33 @@
+FROM alpine
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+RUN mkdir /oj \
+    && mkdir /oj/user \
+    && mkdir /oj/static \
+    && mkdir /oj/output
+RUN apk update \
+    && apk add openjdk11 \
+    && rm /bin/cat \
+    && rm /bin/chmod \
+    && rm /bin/chown \
+    && rm /bin/cp \
+    && rm /bin/echo \
+    && rm /bin/kill \
+    && rm /bin/ln \
+    && rm /bin/mkdir \
+    && rm /bin/mknod \
+    && rm /bin/mktemp \
+    && rm /bin/mount \
+    && rm /bin/mountpoint \
+    && rm /bin/mv \
+    && rm /bin/ping \
+    && rm /bin/rmdir \
+    && rm /bin/umount \
+    && rm /sbin/apk \
+    && rm /sbin/fdisk \
+    && rm /sbin/ifconfig \
+    && rm /sbin/ip \
+    && rm /sbin/ipaddr \
+    && rm /sbin/reboot \
+    && rm /sbin/sysctl \
+    && rm /usr/bin/unzip \
+    && rm /bin/rm
